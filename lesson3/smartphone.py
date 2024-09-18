@@ -3,4 +3,3 @@ class Smartphone:
         self.name = name
         self.model = model
         self.number = number
-        

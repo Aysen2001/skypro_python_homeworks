@@ -16,4 +16,3 @@ catalog.append(phone5)
 
 for phone in catalog:
     print(f"{phone.name} - {phone.model} . {phone.number}")
-    

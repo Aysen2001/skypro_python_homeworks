@@ -3,4 +3,6 @@ def bank(x, y):
     for _ in range(y):
         bal = bal * 1.1
     return print(bal)
+
+
 bank(100, 5)
