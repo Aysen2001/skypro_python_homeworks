@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from pages.PageForm import PageForm
 
 
-def test_form_01(): 
+def test_form_01():
     browser = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()))
     page_form = PageForm(browser)

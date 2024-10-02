@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from pages.PageCalc import PageCalc
 
 
-def test_calc_02(): 
+def test_calc_02():
     browser = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()))
     page_calc = PageCalc(browser)

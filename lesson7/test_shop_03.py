@@ -8,7 +8,7 @@ from pages.PageShopInfo import PageShopInfo
 from pages.PageShopTotal import PageShopTotal
 
 
-def test_shop_03(): 
+def test_shop_03():
     browser = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()))
     page_shop_auth = PageShopAuth(browser)
