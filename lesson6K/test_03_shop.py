@@ -18,20 +18,24 @@ def test_03_shop():
     input_pass = driver.find_element(By.CSS_SELECTOR, "#password")
     input_pass.clear()
     input_pass.send_keys("secret_sauce")
-    login_btn = driver.find_element(By.CSS_SELECTOR, "#login-button").click()
+    driver.find_element(By.CSS_SELECTOR, "#login-button").click()
 
     # выбираем товар и переходим в корзину
-    backpack = driver.find_element(
-        By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack").click()
-    t_shirt = driver.find_element(
-        By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt").click()
-    onesie = driver.find_element(
-        By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie").click()
-    shop_container = driver.find_element(
-        By.CSS_SELECTOR, "#shopping_cart_container").click()
+    driver.find_element(
+        By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack"
+    ).click()
+    driver.find_element(
+        By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt"
+    ).click()
+    driver.find_element(
+        By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie"
+    ).click()
+    driver.find_element(
+        By.CSS_SELECTOR, "#shopping_cart_container"
+    ).click()
 
     # заполняем форму для покупки товара
-    checkout = driver.find_element(By.CSS_SELECTOR, "#checkout").click()
+    driver.find_element(By.CSS_SELECTOR, "#checkout").click()
 
     input_first_name = driver.find_element(By.CSS_SELECTOR, "#first-name")
     input_first_name.clear()
@@ -45,7 +49,7 @@ def test_03_shop():
     input_postal_code.clear()
     input_postal_code.send_keys("478788")
 
-    cont = driver.find_element(By.CSS_SELECTOR, "#continue").click()
+    driver.find_element(By.CSS_SELECTOR, "#continue").click()
 
     txt_total_sum = driver.find_element(
         By.CSS_SELECTOR, "div.summary_total_label").text
@@ -54,4 +58,4 @@ def test_03_shop():
 
     driver.quit()
 
-    assert txt_total_sum == 'Total: $58.29'
+    assert txt_total_sum == "Total: $58.29"
