@@ -10,7 +10,8 @@ def test_02_calc():
     driver = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()))
     driver.maximize_window()
-    driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
+    driver.get(
+        "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
 
     # вводим новое время на ожидание получения результата
     input_delay = driver.find_element(By.CSS_SELECTOR, "#delay")
@@ -26,12 +27,13 @@ def test_02_calc():
     input_8.click()
     input_r = driver.find_element(By.XPATH, '//span[text()="="]')
     input_r.click()
-    
+
     WebDriverWait(driver, 46).until(
-        EC.text_to_be_present_in_element((By.CSS_SELECTOR, '[class="screen"]'), "15"))
-    
+        EC.text_to_be_present_in_element(
+            (By.CSS_SELECTOR, '[class="screen"]'), "15")
+    )
+
     res = driver.find_element(By.CSS_SELECTOR, '[class="screen"]').text
 
     driver.quit()
-    assert res == '15'
-   
+    assert res == "15"
